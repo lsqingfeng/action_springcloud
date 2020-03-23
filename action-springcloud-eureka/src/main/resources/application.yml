@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: action-springcloud-eureka
+
+server:
+  port: 6001
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # 是否注册自己，集群是设置为true
+    fetch-registry: false   #是否需要检索服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  server:
+    enable-self-preservation: false #是否开启自我保护

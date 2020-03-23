@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: action-springcloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true                #启用基于服务发现的路由定位
+          lower-case-service-id: true  #启用服务实例id名称小写支持
+      routes:
+        - id: route1
+          uri: http://www.baidu.com
+          predicates:
+          - Path=/spring-cloud
+        # 访问 localhost:6999/aa/consumer/test ----> localhost:6003/consumer/test
+        - id: route2
+          uri: lb://action-springcloud-consumer
+          predicates:
+            - Path=/aa/**
+          filters:
+            - StripPrefix=1
+
+
+
+server:
+  port: 6999
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6001/eureka/
+
+# 配置Gateway日志等级，输出转发细节信息
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

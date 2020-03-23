@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: action-springcloud-provider-impl
+
+server:
+  port: 6002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6001/eureka/
