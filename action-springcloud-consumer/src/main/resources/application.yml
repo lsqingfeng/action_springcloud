@@ -9,3 +9,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:6001/eureka/
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000 #feign调用连接超时时间
+        readTimeout: 1000 #feign调用读取超时时间
+        loggerLevel: basic #feign调用的log 等级

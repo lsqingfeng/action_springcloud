@@ -1,4 +1,4 @@
-package com.lsqingfeng.action.springcloud.provider;
+package com.lsqingfeng.action.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

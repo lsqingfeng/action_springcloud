@@ -3,7 +3,9 @@ package com.lsqingfeng.action.springcloud;
 import com.lsqingfeng.action.springcloud.consumer.config.GlobalInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
+@EnableCircuitBreaker
 public class ConsumerApplication implements WebMvcConfigurer {
     public static void main(String[] args) {
         SpringApplication.run(ConsumerApplication.class);

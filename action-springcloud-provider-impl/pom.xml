@@ -21,6 +21,7 @@
             <groupId>com.lsqingfeng</groupId>
             <artifactId>action-springcloud-provider</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>
